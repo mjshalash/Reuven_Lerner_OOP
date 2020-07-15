@@ -1,0 +1,11 @@
+# Exercise 1: Create a Scoop Class
+# -- Each instance is a scoop of ice cream
+
+# Exercise 2: Person Class
+# -- Create several people and iterate over them in a list
+# -- Change email address of one person and show that it has been changed
+
+# Exercise 3: Create a BankAccount class
+# -- Will have one attribute, transactions (list of floats)
+# -- Every time you deposit, append a positive number
+# -- Every time you withdraw, append a negative float
