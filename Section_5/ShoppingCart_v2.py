@@ -25,15 +25,11 @@ class ShoppingCart(object):
 
 class OnlineShoppingCart(ShoppingCart):
     def __init__(self, contents):
-         super().__init__(contents)
+        super().__init__(contents)
 
+    # Remember, super returns an object on which we can then call total()
     def total(self):
-        cart_total = 0
-        for item in self.contents:
-            print(item)
-            cart_total = cart_total + (self.contents[item]["PPU"]*self.contents[item]["Quantity"])
-
-        return 10+cart_total+(cart_total*0.05)
+        return (super().total() + 10) + (super().total() * 0.05)
 
 
 sc = ShoppingCart({})
