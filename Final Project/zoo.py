@@ -1,45 +1,35 @@
-class Wolf(object):
+class Animal(object):
     def __init__(self, color):
         self.color = color
-        self.legs = 4
-        self.species = "Wolf"
+        self.species = self.__class__.__name__   # Set species to name of the class
 
     def __repr__(self):
-        output = f"{self.color} {self.species}, {self.legs} legs \n"
+        output = f"{self.color} {self.species}, {self.legs} legs "
         return output
 
 
-class Sheep(object):
+class Wolf(Animal):
     def __init__(self, color):
-        self.color = color
+        super().__init__(color)
         self.legs = 4
-        self.species = "Sheep"
-
-    def __repr__(self):
-        output = f"{self.color} {self.species}, {self.legs} legs \n"
-        return output
 
 
-class Snake(object):
+class Sheep(Animal):
     def __init__(self, color):
-        self.color = color
+        super().__init__(color)
+        self.legs = 4
+
+
+class Snake(Animal):
+    def __init__(self, color):
+        super().__init__(color)
         self.legs = 0
-        self.species = "Snake"
-
-    def __repr__(self):
-        output = f"{self.color} {self.species}, {self.legs} legs \n"
-        return output
 
 
-class Parrot(object):
+class Parrot(Animal):
     def __init__(self, color):
-        self.color = color
+        super().__init__(color)
         self.legs = 2
-        self.species = "Parrot"
-
-    def __repr__(self):
-        output = f"{self.color} {self.species}, {self.legs} legs \n"
-        return output
 
 
 class Cage(object):
@@ -60,6 +50,7 @@ class Cage(object):
 
         return output
 
+
 class Zoo(object):
     def __init__(self):
         self.cages = []
@@ -79,10 +70,7 @@ class Zoo(object):
         output = f""
         counter = 1
         for c in self.cages:
-            for a in c.animals:
-                if a.color == color:
-                    output += f"{counter} {a} \n"
-                    counter += 1
+            output += f"{c}"
 
         return output
 
